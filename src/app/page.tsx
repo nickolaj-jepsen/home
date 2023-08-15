@@ -1,7 +1,8 @@
 import styles from "./page.module.css";
 import Image from "next/image";
 import { Box } from "@/components/Box";
-import Logo from "../../public/logo.png";
+import logo from "../../public/logo.png";
+import background from "../../public/background.jpg";
 import { GitHub, Linkedin, Mail } from "react-feather";
 
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
         <Box className={styles.main}>
           <Image
             className={styles.logo}
-            src={Logo}
+            src={logo}
             alt={"pixel art of a flame"}
           />
           <h1>Nickolaj Jepsen</h1>
@@ -42,7 +43,9 @@ export default function Home() {
         </Box>
       </div>
       <Image
-        src={"/background.jpg"}
+        src={background}
+        loading={"lazy"}
+        placeholder={"blur"}
         alt={"background"}
         className={styles.background}
         fill={true}
