@@ -22,6 +22,7 @@ export default function Home() {
             <a
               href="https://github.com/nickolaj-jepsen"
               target="_blank"
+              aria-label="Visit my gitHub"
               rel="noopener noreferrer"
             >
               <GitHub />
@@ -29,6 +30,7 @@ export default function Home() {
             <a
               href={"mailto:nickolaj@fireproof.website"}
               target="_blank"
+              aria-label="Write me an email"
               rel="noopener noreferrer"
             >
               <Mail />
@@ -36,6 +38,7 @@ export default function Home() {
             <a
               href="https://www.linkedin.com/in/nickolaj-jepsen/"
               target="_blank"
+              aria-label="Visit my LinkedIn"
               rel="noopener noreferrer"
             >
               <Linkedin />
