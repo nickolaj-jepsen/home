@@ -4,6 +4,7 @@ import { Box } from "@/components/Box";
 import logo from "../../public/logo.png";
 import background from "../../public/background.jpg";
 import { GitHub, Linkedin, Mail } from "react-feather";
+import { FadeImage } from "@/components/FadeImage";
 
 export default function Home() {
   return (
@@ -42,10 +43,8 @@ export default function Home() {
           </div>
         </Box>
       </div>
-      <Image
+      <FadeImage
         src={background}
-        loading={"lazy"}
-        placeholder={"blur"}
         alt={"background"}
         className={styles.background}
         fill={true}
