@@ -1,9 +1,10 @@
 import "./reset.css";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Rubik, Inter } from "next/font/google";
+import clsx from "clsx";
 
-const inter = Inter({ subsets: ["latin"] });
+const rubik = Rubik({ subsets: ["latin"], variable: "--font-brand" });
 
 export const metadata: Metadata = {
   title: "A Fireproof Website",
@@ -17,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={clsx(rubik.variable)}>{children}</body>
     </html>
   );
 }

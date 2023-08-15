@@ -16,8 +16,8 @@ export default function Home() {
             src={logo}
             alt={"pixel art of a flame"}
           />
-          <h1>Nickolaj Jepsen</h1>
-          <h3>Software developer</h3>
+          <h1 className={styles.name}>Nickolaj Jepsen</h1>
+          <h2 className={styles.title}>Software developer</h2>
           <div className={styles.socials}>
             <a
               href="https://github.com/nickolaj-jepsen"

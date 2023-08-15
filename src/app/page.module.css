@@ -9,6 +9,15 @@
   padding-top: 2.5em;
 }
 
+.name {
+  font-size: 2em;
+}
+
+.title {
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
 .wrapper {
   position: absolute;
   width: 100%;
