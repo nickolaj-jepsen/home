@@ -1,3 +1,16 @@
+.wrapper {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+
+.blogPosts {
+  max-width: min(500px, 100%);
+  word-break: break-all;
+  margin: 20px;
+  background-color: var(--color-background-secondary);
+}
 
 .main {
   display: flex;
@@ -7,6 +20,9 @@
   z-index: 1;
   position: relative;
   padding-top: 2.5em;
+  width: fit-content;
+  max-width: 100%;
+  margin: 80px 20px 0;
 }
 
 .name {
@@ -16,27 +32,6 @@
 .title {
   font-size: 1.2em;
   font-weight: 600;
-}
-
-.wrapper {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
 }
 
 .logo {

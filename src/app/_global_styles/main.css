@@ -2,6 +2,7 @@
 
 :root {
     --color-primary: #ce6749;
+    --color-primary-alt: #d47a60;
     --color-background: #1A1B1E;
     --color-background-secondary: #141517;
     --color-text: #fff;
@@ -13,8 +14,21 @@
 html {
     background-color: var(--color-background);
     color: var(--color-text);
+    scroll-behavior: smooth;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-brand);
+}
+
+a {
+    color: var(--color-primary);
+}
+
+a:hover {
+    color: var(--color-primary-alt);
+}
+
+ol, ul {
+    padding-left: 1em;
 }
