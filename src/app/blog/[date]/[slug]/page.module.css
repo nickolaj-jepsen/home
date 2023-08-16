@@ -31,8 +31,8 @@
 }
 
 .author {
-    font-weight: 300;
     display: flex;
+    font-size: .9rem;
 }
 
 .authorLink {
@@ -40,6 +40,8 @@
     display: flex;
     justify-content: center;
     align-content: baseline;
+    font: var(--font-brand);
+    font-weight: 700;
 }
 
 .authorImage {
