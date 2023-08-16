@@ -2,7 +2,7 @@ import styles from "./page.module.css";
 import Image from "next/image";
 import { Box } from "@/components/Box";
 import logo from "../../public/logo.png";
-import { GitHub, Linkedin, Mail } from "react-feather";
+import { GitHub, Linkedin, Mail, Rss } from "react-feather";
 import { listBlogs } from "@/api/blog";
 import Link from "next/link";
 
@@ -48,7 +48,12 @@ export default async function Page() {
       </Box>
       {blogPosts.length >= 1 && (
         <Box className={styles.blogPosts}>
-          <h2>Latest blog posts</h2>
+          <h2 className={styles.feedHeader}>
+            Latest blog posts
+            <Link href={"/atom.xml"} target={"_blank"}>
+              <Rss />
+            </Link>
+          </h2>
           <ul>
             {blogPosts.slice(0, 3).map((post) => (
               <li key={post.slug}>
