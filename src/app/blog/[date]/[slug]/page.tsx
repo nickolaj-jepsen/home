@@ -5,6 +5,7 @@ import Image from "next/image";
 import logo from "../../../../../public/logo.png";
 import { getBlog, listBlogs } from "@/api/blog";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   return listBlogs();
@@ -22,7 +23,7 @@ export default async function Page({
   } = await getBlog(params.date, params.slug);
 
   if (!published && process.env.NODE_ENV === "production") {
-    return null;
+    notFound();
   }
 
   return (
