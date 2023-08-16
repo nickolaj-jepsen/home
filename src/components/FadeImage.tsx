@@ -10,6 +10,7 @@ export const FadeImage: FunctionComponent<ImageProps> = (props) => {
   return (
     <Image
       {...props}
+      alt={props.alt}
       className={clsx(props.className, styles.image, isLoaded && styles.loaded)}
       onLoadingComplete={() => setIsLoaded(true)}
     />

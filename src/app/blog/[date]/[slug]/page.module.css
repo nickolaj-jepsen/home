@@ -1,0 +1,87 @@
+
+.wrapper {
+    --blog-width: 800px;
+
+    min-height: 100%;
+    padding: 20px 20px;
+    width: var(--blog-width);
+    max-width: 100%;
+    position: relative;
+}
+
+.header {
+    margin: 0 80px -100px 20px;
+    background-color: var(--color-background-secondary);
+    z-index: 12;
+    position:relative
+}
+
+.body {
+    padding-top: 110px;
+    margin-bottom: 100px;
+    overflow-wrap: break-word;
+    overflow: hidden;
+    z-index: 0;
+    position:relative
+}
+
+.body > * {
+    margin-bottom: 10px;
+}
+
+.author {
+    font-weight: 300;
+    display: flex;
+}
+
+.authorLink {
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-content: baseline;
+}
+
+.authorImage {
+    margin-left: 2px;
+    height: 20px;
+    width: 20px;
+    object-fit: contain;
+}
+
+.tocParent {
+    --toc-width: 300px;
+    --toc-overlap: 60px;
+
+    display: none;
+    position: absolute;
+    top: 200px;
+    right: calc((var(--toc-width) - var(--toc-overlap)) * -1);
+    height: 100%;
+}
+
+.toc {
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    max-width: var(--toc-width);
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    z-index: 1;
+    left: 0;
+    background-color: var(--color-background-secondary);
+}
+
+@media (min-width: 1050px) {
+    .wrapper:has(.tocParent) {
+        margin-right: 260px;
+    }
+
+    .wrapper:has(.tocParent) > .body {
+        padding-right: 50px;
+    }
+
+    .tocParent {
+        display: block;
+    }
+}

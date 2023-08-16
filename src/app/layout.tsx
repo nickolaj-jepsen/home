@@ -1,10 +1,22 @@
 import "./reset.css";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Rubik } from "next/font/google";
+import { Rubik, Inter } from "next/font/google";
 import clsx from "clsx";
+import { FadeImage } from "@/components/FadeImage";
+import background from "../../public/background.jpg";
+import styles from "./layout.module.css";
 
-const rubik = Rubik({ subsets: ["latin"], variable: "--font-brand" });
+const rubik = Rubik({
+  subsets: ["latin"],
+  variable: "--font-brand",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "A Fireproof Website",
@@ -18,7 +30,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={clsx(rubik.variable)}>{children}</body>
+      <body className={clsx(rubik.variable, inter.className)}>
+        <div className={styles.wrapper}>{children}</div>
+        <div className={styles.background}>
+          <FadeImage
+            src={background}
+            alt={"background"}
+            className={styles.image}
+            fill={true}
+          />
+        </div>
+      </body>
     </html>
   );
 }
