@@ -1,19 +1,20 @@
 @layer component, implementation;
 
 :root {
-    --color-primary: #ce6749;
-    --color-primary-alt: #d47a60;
-    --color-background: #1A1B1E;
-    --color-background-secondary: #141517;
-    --color-text: #fff;
+    --color-accent: #f65e30;
+    --color-accent-alt: #dc7658;
+    --color-bg: #1C1B1A;
+    --color-bg-alt: #282726;
+    --color-ui: #343331;
+    --color-fg: #DAD8CE;
 
     --border-radius: 8px;
     --box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 html {
-    background-color: var(--color-background);
-    color: var(--color-text);
+    background-color: var(--color-bg);
+    color: var(--color-fg);
     scroll-behavior: smooth;
 }
 
@@ -22,13 +23,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-    color: var(--color-primary);
+    color: var(--color-accent);
 }
 
 a:hover {
-    color: var(--color-primary-alt);
+    color: var(--color-accent-alt);
 }
 
 ol, ul {
     padding-left: 1em;
+}
+
+/* Table styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5em 0;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid var(--color-ui);
+}
+
+thead {
+    background-color: var(--color-ui);
+}
+
+th {
+    text-align: left;
+    padding: 0.75em 1em;
+    font-weight: bold;
+    font-family: var(--font-brand);
+}
+
+td {
+    padding: 0.75em 1em;
+    border-top: 1px solid var(--color-ui);
 }

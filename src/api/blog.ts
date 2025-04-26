@@ -7,9 +7,9 @@ import rehypeRaw from "rehype-raw";
 import rehypeSlug from "rehype-slug";
 import rehypeExtractToc from "@stefanprobst/rehype-extract-toc";
 import rehypeReact from "rehype-react";
-import { createElement, Fragment } from "react";
-import { array, boolean, object, string, withDefault } from "valibot";
+import { array, boolean, object, string, optional, parse } from "valibot";
 import fs from "fs";
+import runtime from 'react/jsx-runtime'
 
 const MarkdownProcessor = unified()
   .use(remarkParse)
@@ -19,12 +19,12 @@ const MarkdownProcessor = unified()
   .use(rehypeRaw) // reparse the dom to allow for html in markdown
   .use(rehypeSlug)
   .use(rehypeExtractToc)
-  .use(rehypeReact, { createElement, Fragment });
+  .use(rehypeReact, runtime)
 
 const FrontmatterSchema = object({
   title: string(),
-  tags: withDefault(array(string()), []),
-  published: withDefault(boolean(), false),
+  tags: optional(array(string()), []),
+  published: optional(boolean(), false),
 });
 
 export const getBlog = async (date: string, slug: string) => {
@@ -38,7 +38,7 @@ export const getBlog = async (date: string, slug: string) => {
     data: { toc, frontmatter: rawFrontmatter },
   } = await MarkdownProcessor.process(source);
 
-  const frontmatter = FrontmatterSchema.parse(rawFrontmatter);
+  const frontmatter = parse(FrontmatterSchema, rawFrontmatter);
 
   return { result, toc, frontmatter };
 };

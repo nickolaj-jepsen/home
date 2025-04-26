@@ -1,6 +1,6 @@
 @layer component {
     .box {
-        background-color: var(--color-background);
+        background-color: var(--color-bg);
         border-radius: var(--border-radius);
         box-shadow: var(--box-shadow);
         padding: 2em;

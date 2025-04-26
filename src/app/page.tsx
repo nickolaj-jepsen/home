@@ -1,7 +1,6 @@
 import styles from "./page.module.css";
-import Image from "next/image";
 import { Box } from "@/components/Box";
-import logo from "../../public/logo.png";
+import Logo from "../../public/logo.svg";
 import { GitHub, Linkedin, Mail, Rss } from "react-feather";
 import { listBlogs } from "@/api/blog";
 import Link from "next/link";
@@ -12,9 +11,8 @@ export default async function Page() {
   return (
     <div className={styles.wrapper}>
       <Box className={styles.main}>
-        <Image
+        <Logo
           className={styles.logo}
-          src={logo}
           alt={"pixel art of a flame"}
         />
         <h1 className={styles.name}>Nickolaj Jepsen</h1>

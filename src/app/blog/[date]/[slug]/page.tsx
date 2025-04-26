@@ -2,7 +2,7 @@ import React from "react";
 import { Box } from "@/components/Box";
 import styles from "./page.module.css";
 import Image from "next/image";
-import logo from "../../../../../public/logo.png";
+import Logo from "../../../../../public/logo.svg";
 import { getBlog, listBlogs } from "@/api/blog";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -16,11 +16,12 @@ export default async function Page({
 }: {
   params: { slug: string; date: string };
 }) {
+  const { slug, date } = await params;
   const {
     result,
     toc,
     frontmatter: { title, published },
-  } = await getBlog(params.date, params.slug);
+  } = await getBlog(date, slug);
 
   if (!published && process.env.NODE_ENV === "production") {
     notFound();
@@ -33,12 +34,11 @@ export default async function Page({
         <span className={styles.author}>
           Author:{" "}
           <Link href={"/"} className={styles.authorLink}>
-            <Image
-              src={logo}
+            <Logo
               height={20}
               alt={""}
               className={styles.authorImage}
-            ></Image>
+            ></Logo>
             Nickolaj Jepsen
           </Link>
         </span>

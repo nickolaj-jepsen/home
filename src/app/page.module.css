@@ -9,7 +9,7 @@
   max-width: min(500px, 100%);
   word-break: break-all;
   margin: 20px;
-  background-color: var(--color-background-secondary);
+  background-color: var(--color-bg-alt);
 }
 
 .main {
@@ -41,7 +41,7 @@
   height: 80px;
   object-fit: contain;
   top: -50px;
-  background-color: var(--color-background-secondary);
+  background-color: var(--color-bg-alt);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
 }
@@ -56,12 +56,12 @@
 .socials svg {
   width: 2em;
   height: 2em;
-  color: var(--color-text);
+  color: var(--color-fg);
   transition: color 0.1s ease-in;
 }
 
 .socials svg:hover {
-  color: var(--color-primary);
+  color: var(--color-accent);
 }
 
 .feedHeader {

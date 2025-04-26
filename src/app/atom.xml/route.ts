@@ -1,6 +1,8 @@
 import { listBlogs } from "@/api/blog";
 import { Feed } from "feed";
 
+export const dynamic = 'force-static'
+
 const SITE_URL = "https://fireproof.website";
 
 export async function GET() {

@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { Rubik, Inter } from "next/font/google";
 import clsx from "clsx";
 import { FadeImage } from "@/components/FadeImage";
-import background from "../../public/background.jpg";
+import background from "../../public/background-min.jpg";
 import styles from "./layout.module.css";
 
 const rubik = Rubik({

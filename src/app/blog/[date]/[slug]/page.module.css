@@ -11,7 +11,7 @@
 
 .header {
     margin: 0 80px -40px 20px;
-    background-color: var(--color-background-secondary);
+    background-color: var(--color-bg-alt);
     z-index: 12;
     width: fit-content;
     position:relative
@@ -72,7 +72,7 @@
     overflow-y: auto;
     z-index: 1;
     left: 0;
-    background-color: var(--color-background-secondary);
+    background-color: var(--color-bg-alt);
 }
 
 @media (min-width: 1050px) {
